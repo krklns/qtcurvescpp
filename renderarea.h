@@ -13,10 +13,13 @@ public:
     QSize minimumSizeHint() const Q_DECL_OVERRIDE;
     QSize sizeHint() const Q_DECL_OVERRIDE;
 
-    enum Shapes { Astroid, Cicloid, HuygensCicloid, HypoCicloid };
+    enum ShapeType { Astroid, Cycloid, HuygensCycloid, HypoCycloid };
 
     void setBackgroundColor (QColor color) { mBackgroundColor = color; } // setter
     QColor getBackgroundColor () const { return mBackgroundColor; } // getter
+
+    void setShape (ShapeType shape) { mShape = shape; }
+    ShapeType getShape () const { return mShape; }
 
 protected:
     virtual void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
@@ -28,6 +31,7 @@ public slots:
 private:
     QColor mBackgroundColor;
     QColor mShapeColor;
+    ShapeType mShape;
 };
 
 #endif // RENDERAREA_H

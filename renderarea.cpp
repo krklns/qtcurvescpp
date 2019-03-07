@@ -5,7 +5,8 @@
 RenderArea::RenderArea(QWidget *parent) :
     QWidget(parent),
     mBackgroundColor (QColor (0, 0, 255)),
-    mShapeColor (QColor (255, 255, 255))
+    mShapeColor (QColor (255, 255, 255)),
+    mShape (Astroid)
 {
 
 }
@@ -22,9 +23,33 @@ QSize RenderArea::sizeHint() const
 
 void RenderArea::paintEvent(QPaintEvent *event)
 {
+    Q_UNUSED(event);
+
     QPainter painter(this);
-    painter.setBrush(mBackgroundColor);
     painter.setRenderHint(QPainter::Antialiasing, true);
+
+    switch (mShape) {
+    case Astroid:
+        mBackgroundColor = Qt::red;
+        break;
+
+    case Cycloid:
+        mBackgroundColor = Qt::green;
+        break;
+
+    case HuygensCycloid:
+        mBackgroundColor = Qt::blue;
+        break;
+
+    case HypoCycloid:
+        mBackgroundColor = Qt::yellow;
+        break;
+
+    default:
+        break;
+    }
+
+    painter.setBrush(mBackgroundColor);
     painter.setPen(mShapeColor);
 
     // drawing area
