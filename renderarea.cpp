@@ -49,9 +49,16 @@ void RenderArea::on_shape_changed()
         break;
 
     case Line:
-        mIntervalLength = 2; // not really needed
         mScale = 100;  // line length in pixels
+        mIntervalLength = 2; // not really needed
         mStepCount = 128;
+        break;
+
+    case Circle:
+        mScale = 100;
+        mIntervalLength = 2 * M_PI;
+        mStepCount = 128;
+        break;
 
     default:
         break;
@@ -79,6 +86,10 @@ QPointF RenderArea::compute (float t)
 
     case Line:
         return compute_line(t);
+        break;
+
+    case Circle:
+        return compute_circle(t);
         break;
 
     default:
@@ -124,6 +135,11 @@ QPointF RenderArea::compute_hypo (float t)
 QPointF RenderArea::compute_line (float t)
 {
     return QPointF(1 - t, 1 - t);
+}
+
+QPointF RenderArea::compute_circle (float t)
+{
+    return QPointF( cos(t) , sin(t) );
 }
 
 void RenderArea::paintEvent(QPaintEvent *event)

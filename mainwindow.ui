@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>507</width>
-    <height>399</height>
+    <height>390</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,7 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0" rowspan="2">
+    <item row="0" column="0">
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <widget class="RenderArea" name="renderArea" native="true"/>
@@ -53,7 +53,7 @@
       </item>
      </layout>
     </item>
-    <item row="0" column="1" rowspan="2" colspan="2">
+    <item row="0" column="1">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <widget class="QPushButton" name="btnAstroid">
@@ -87,6 +87,13 @@
        <widget class="QPushButton" name="btnLine">
         <property name="text">
          <string>Line</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnCircle">
+        <property name="text">
+         <string>Circle</string>
         </property>
        </widget>
       </item>
