@@ -25,31 +25,31 @@ void RenderArea::on_shape_changed()
 {
     switch (mShape) {
     case Astroid:
-        mScale = 40;
+        mScale = 90;
         mIntervalLength = 2 * M_PI;
         mStepCount = 256;
         break;
 
     case Cycloid:
-        mScale = 4;
-        mIntervalLength = 6 * M_PI;
+        mScale = 10;
+        mIntervalLength = 4 * M_PI;
         mStepCount = 256;
         break;
 
     case HuygensCycloid:
-        mScale = 4;
+        mScale = 12;
         mIntervalLength = 4 * M_PI;
         mStepCount = 128;
         break;
 
     case HypoCycloid:
-        mScale = 15;
+        mScale = 40;
         mIntervalLength = 2 * M_PI;
         mStepCount = 256;
         break;
 
     case Line:
-        mIntervalLength = 1; // not really needed
+        mIntervalLength = 2; // not really needed
         mScale = 100;  // line length in pixels
         mStepCount = 128;
 
