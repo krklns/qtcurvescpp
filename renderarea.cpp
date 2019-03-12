@@ -71,9 +71,6 @@ void RenderArea::on_shape_changed()
         mIntervalLength = 12 * M_PI;
         mStepCount = 512;
         break;
-
-    default:
-        break;
     }
 }
 
@@ -112,8 +109,6 @@ QPointF RenderArea::compute (float t)
         return compute_fancy(t);
         break;
 
-    default:
-        break;
     }
 
     return QPointF (0, 0);
